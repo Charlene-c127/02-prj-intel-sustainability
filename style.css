@@ -1,1 +1,103 @@
-/* Add your CSS here */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2933;
+}
+
+header {
+  background: linear-gradient(135deg, #0068b5, #00a3e0);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+header img {
+  width: 130px;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 16px;
+}
+
+header p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+section {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 40px 24px;
+  scroll-snap-type: x mandatory;
+}
+
+section > div {
+  min-width: 280px;
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section > div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 104, 181, 0.25);
+}
+
+section h2 {
+  color: #0068b5;
+  font-size: 2rem;
+  margin: 0;
+}
+
+section h3 {
+  margin-top: 8px;
+  color: #003c71;
+}
+
+section p {
+  line-height: 1.5;
+}
+
+body > p {
+  text-align: center;
+  font-weight: bold;
+  color: #0068b5;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 60px 18px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    flex-direction: column;
+    overflow-x: visible;
+    padding: 24px 18px;
+  }
+
+  section > div {
+    min-width: 100%;
+  }
+}
