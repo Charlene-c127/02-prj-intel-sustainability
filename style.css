@@ -1,3 +1,6 @@
+/* ------------------------
+   Global Reset & Body
+------------------------ */
 * {
   box-sizing: border-box;
 }
@@ -9,6 +12,9 @@ body {
   color: #1f2933;
 }
 
+/* ------------------------
+   Header / Hero
+------------------------ */
 header {
   background: linear-gradient(135deg, #0068b5, #00a3e0);
   color: white;
@@ -34,7 +40,11 @@ header p {
   line-height: 1.6;
 }
 
-section {
+/* ------------------------
+   Timeline Cards Section
+   (scroll-snap horizontal)
+------------------------ */
+section.timeline {
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -42,7 +52,7 @@ section {
   scroll-snap-type: x mandatory;
 }
 
-section > div {
+section.timeline > div {
   flex: 0 0 320px;
   background: white;
   border-radius: 18px;
@@ -52,23 +62,23 @@ section > div {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-section > div:hover {
+section.timeline > div:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 24px rgba(0, 104, 181, 0.25);
 }
 
-section h2 {
+section.timeline h2 {
   color: #0068b5;
   font-size: 2rem;
   margin: 0;
 }
 
-section h3 {
+section.timeline h3 {
   margin-top: 8px;
   color: #003c71;
 }
 
-section img {
+section.timeline img {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -77,14 +87,14 @@ section img {
   margin: 16px 0;
 }
 
-section p {
+section.timeline p {
   line-height: 1.5;
   max-height: 85px;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
-section > div:hover p {
+section.timeline > div:hover p {
   max-height: 300px;
 }
 
@@ -108,22 +118,135 @@ body > p {
     font-size: 1rem;
   }
 
-  section {
+  section.timeline {
     flex-direction: column;
     overflow-x: visible;
     padding: 24px 18px;
   }
 
-  section > div {
+  section.timeline > div {
     flex: 0 0 auto;
     width: 100%;
   }
 
-  section img {
+  section.timeline img {
     height: 200px;
   }
 
-  section p {
+  section.timeline p {
     max-height: none;
   }
+}
+
+/* ------------------------
+   Three-Column Section Cards
+------------------------ */
+section.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 24px;
+}
+
+section.cards .col {
+  flex: 0 0 300px;
+}
+
+section.cards .card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.cards .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 104, 181, 0.25);
+}
+
+section.cards .card h3,
+section.cards .card p,
+section.cards .card a {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  section.cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.cards .col {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+/* ------------------------
+   Newsletter Section
+------------------------ */
+section.newsletter {
+  padding: 40px 24px;
+}
+
+section.newsletter .card {
+  padding: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+section.newsletter h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+section.newsletter form .form-label {
+  font-weight: 600;
+}
+
+section.newsletter form input {
+  margin-bottom: 16px;
+}
+
+/* ------------------------
+   Footer
+------------------------ */
+footer {
+  background: #1f2933;
+  color: white;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+footer a {
+  color: white;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+.newsletter-box {
+  max-width: 650px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-note {
+  text-align: center;
+  font-weight: bold;
+  color: #0068b5;
+  padding: 24px 0;
 }
